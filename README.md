@@ -9,7 +9,7 @@ It includes both a **Jupyter Notebook** for analysis and a **Streamlit app** for
 
 - Upload your own student dataset
 - Select between:
-  - ✅ XGBoost Classifier
+  - ✅ Random Forest
   - ✅ Logistic Regression
 - Clean missing values automatically
 - View:
