@@ -9,7 +9,7 @@ It includes both a **Jupyter Notebook** for analysis and a **Streamlit app** for
 
 - Upload your own student dataset
 - Select between:
-  - ✅ Random Forest
+  - ✅ XGBoost Classifier
   - ✅ Logistic Regression
 - Clean missing values automatically
 - View:
@@ -21,8 +21,8 @@ It includes both a **Jupyter Notebook** for analysis and a **Streamlit app** for
 
 ## 📂 Files Included
 
-- `student_depression_app.py`: The Streamlit web app
-- `student_model_comparison.ipynb`: Model comparison notebook
+- `app_best_models.py`: The Streamlit web app
+- `Depression.ipynb`: Model comparison notebook
 - `student_depression_dataset.csv`: Sample dataset
 - `README.md`: Project documentation
 
