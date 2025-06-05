@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -9,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
+from sklearn.linear_model import LogisticRegression
 
 st.title("Student Depression Prediction (Top 2 Models)")
 
@@ -50,13 +49,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Model Selection
 st.subheader("Choose a Model")
-model_name = st.selectbox("Select model", ["Random Forest", "XGBoost"])
+model_name = st.selectbox("Select model", ["Random Forest", "Logistic Regression"])
 
 if st.button("Train and Evaluate"):
     if model_name == "Random Forest":
         model = RandomForestClassifier()
-    elif model_name == "XGBoost":
-        model = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
+    elif model_name == "Logistic Regression":
+        model = LogisticRegression(max_iter=1000)
 
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
@@ -68,3 +67,4 @@ if st.button("Train and Evaluate"):
     fig, ax = plt.subplots()
     sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt='d', cmap='Blues', ax=ax)
     st.pyplot(fig)
+
